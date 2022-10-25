@@ -1,6 +1,6 @@
 import express from 'express';
 import { connectMongodb } from './database/db';
-import { router } from './routes';
+import { router } from './routes/index';
 import 'dotenv/config';
 
 const app = express();

@@ -1,18 +1,11 @@
-import { model, Schema } from 'mongoose'
+export class User {
+  name?: string;
+  tag?: string;
+  enrollment?: number;
+  created_at: Date;
 
-interface IUser {
-  name: String,
-  tag: String,
-  enrollment?: Number
+  constructor(){
+    this.created_at = new Date();
+  }
 }
 
-const userSchema  = new Schema<IUser>({
-  name: { type: String, required: true },
-  tag: { type: String, required: true },
-  enrollment: Number
-}, {
-  collection: 'User',
-  versionKey: false
-})
-
-export const User = model<IUser>('User', userSchema )
